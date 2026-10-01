@@ -3,7 +3,7 @@
 
 <head>
     <title>JavaLearn Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -14,40 +14,21 @@
 
         <h2>Login</h2>
 
-        <input type="text" id="username" placeholder="Username">
-        <br><br>
+        <form action="/login" method="POST">
 
-        <input type="password" id="password" placeholder="Password">
-        <br><br>
+    <input type="text" name="username" placeholder="Username">
+    <br><br>
 
-        <button onclick="login()">Login</button>
+    <input type="password" name="password" placeholder="Password">
+    <br><br>
+
+    <button type="submit">Login</button>
+
+</form>
 
         <p id="message"></p>
 
     </div>
-
-    <script>
-
-        function login() {
-
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            if (username == "" || password == "") {
-
-                document.getElementById("message").innerHTML =
-                "Please enter username and password";
-
-            } 
-            else {
-
-                window.location.href = "home.html";
-
-            }
-
-        }
-
-    </script>
 
 </body>
 
