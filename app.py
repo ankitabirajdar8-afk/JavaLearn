@@ -33,6 +33,14 @@ def check_login():
         return render_template("home.html")
     else:
         return "Invalid username or password"
+    
+@app.route("/sem1")
+def sem1():
+    return render_template("sem1.html")
+
+@app.route("/sem2")
+def sem2():
+    return render_template("sem2.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
