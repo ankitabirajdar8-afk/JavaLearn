@@ -2,10 +2,12 @@
 <html>
 
 <head>
+
     <title>JavaLearn Home</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body class="dashboard-page">
@@ -24,13 +26,15 @@
 
     <main class="container">
 
+        <!-- Welcome -->
+
         <section class="welcome">
 
-            <h2>Welcome to Learn Java</h2>
+            <h2>Welcome to JavaLearn</h2>
 
             <p>
                 Learn Java concepts easily with notes,
-                examples and videos.
+                topics and useful videos.
             </p>
 
         </section>
@@ -40,9 +44,14 @@
 
         <section class="search-section">
 
+            <h2>Search Java Topics</h2>
+
             <input type="text"
                    id="searchBox"
-                   placeholder="Search Java topics...">
+                   placeholder="Search Java topic..."
+                   onkeyup="searchTopic()">
+
+            <div id="searchResult"></div>
 
         </section>
 
@@ -51,9 +60,16 @@
 
         <div class="semester-container">
 
+
+            <!-- Semester 1 -->
+
             <div class="semester-card">
 
                 <h2>Semester 1</h2>
+
+                <p>
+                    Learn the basic concepts of Java.
+                </p>
 
                 <button onclick="window.location.href='/sem1'">
                     Open Semester 1
@@ -62,9 +78,15 @@
             </div>
 
 
+            <!-- Semester 2 -->
+
             <div class="semester-card">
 
                 <h2>Semester 2</h2>
+
+                <p>
+                    Learn advanced Java concepts.
+                </p>
 
                 <button onclick="window.location.href='/sem2'">
                     Open Semester 2
@@ -75,31 +97,159 @@
         </div>
 
     </main>
-<script>
 
-    const searchBox = document.getElementById("searchBox");
 
-    searchBox.addEventListener("keyup", function() {
+    <script>
 
-        let searchText = searchBox.value.toLowerCase();
+        function searchTopic() {
 
-        let semesters = document.querySelectorAll(".semester-card");
+            let search =
+                document.getElementById("searchBox").value.toLowerCase();
 
-        semesters.forEach(function(semester) {
+            let result =
+                document.getElementById("searchResult");
 
-            let text = semester.innerText.toLowerCase();
 
-            if (text.includes(searchText)) {
-                semester.style.display = "block";
-            } else {
-                semester.style.display = "none";
+            if (search === "") {
+
+                result.innerHTML = "";
+
+                return;
             }
 
-        });
 
-    });
+            let topics = [
 
-</script>
+                {
+                    name: "Introduction to Java",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Introduction"
+                },
+
+                {
+                    name: "Java Basics",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Basics"
+                },
+
+                {
+                    name: "Variables and Data Types",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Variables+Data+Types"
+                },
+
+                {
+                    name: "Classes and Objects",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Classes+Objects"
+                },
+
+                {
+                    name: "Constructors",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Constructors"
+                },
+
+                {
+                    name: "Inheritance",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Inheritance"
+                },
+
+                {
+                    name: "Polymorphism",
+                    semester: "Semester 1",
+                    link: "https://www.youtube.com/watch?v=UMhqsoHREOQ"
+                },
+
+                {
+                    name: "Exception Handling",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/watch?v=osEjmECD8bI"
+                },
+
+                {
+                    name: "File Handling",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+File+Handling"
+                },
+
+                {
+                    name: "Multithreading",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Multithreading"
+                },
+
+                {
+                    name: "JDBC and Database Connectivity",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/watch?v=txFAuhHELiE"
+                },
+
+                {
+                    name: "Collections in Java",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Collections"
+                },
+
+                {
+                    name: "Interfaces",
+                    semester: "Semester 2",
+                    link: "https://www.youtube.com/results?search_query=Telusko+Java+Interfaces"
+                }
+
+            ];
+
+
+            let found = topics.filter(function(topic) {
+
+                return topic.name
+                    .toLowerCase()
+                    .includes(search);
+
+            });
+
+
+            if (found.length === 0) {
+
+                result.innerHTML =
+                    "<p class='no-result'>No Java topic found.</p>";
+
+                return;
+            }
+
+
+            result.innerHTML = "";
+
+
+            found.forEach(function(topic) {
+
+                result.innerHTML += `
+
+                    <div class="search-result">
+
+                        <h3>${topic.name}</h3>
+
+                        <p>📚 ${topic.semester}</p>
+
+                        <a href="${topic.link}"
+                           target="_blank"
+                           class="youtube-button">
+
+                            Watch on YouTube
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+    </script>
+
 </body>
 
 </html>

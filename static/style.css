@@ -186,3 +186,73 @@ button:hover {
     border-radius: 8px;
     font-size: 16px;
 }
+/* Search */
+
+.search-section {
+    margin-bottom: 25px;
+}
+
+.search-section h2 {
+    color: #53643A;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #AAB59A;
+    border-radius: 7px;
+
+    font-size: 16px;
+}
+
+
+/* Search Result */
+
+.search-result {
+    background: white;
+
+    border: 1px solid #AAB59A;
+    border-radius: 8px;
+
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.search-result h3 {
+    margin: 0 0 8px;
+
+    color: #53643A;
+}
+
+.search-result p {
+    margin: 5px 0 12px;
+}
+
+
+/* YouTube Button */
+
+.youtube-button {
+    display: inline-block;
+
+    padding: 9px 14px;
+
+    background: #53643A;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+.youtube-button:hover {
+    background: #3F4D2B;
+}
+
+
+/* No Result */
+
+.no-result {
+    margin-top: 10px;
+    color: #555555;
+}
