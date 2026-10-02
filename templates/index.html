@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>JavaLearn Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learn Java - Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="login-page">
 
-    <h1>JavaLearn</h1>
+    <div class="login-box">
 
-    <div class="login">
+        <h1>Learn Java</h1>
 
-        <h2>Login</h2>
+        <p class="subtitle">Student Learning Website</p>
 
         <form action="/login" method="POST">
 
-    <input type="text" name="username" placeholder="Username">
-    <br><br>
+            <label for="username">Username</label>
 
-    <input type="password" name="password" placeholder="Password">
-    <br><br>
+            <input type="text"
+                   id="username"
+                   name="username"
+                   placeholder="Enter username"
+                   required>
 
-    <button type="submit">Login</button>
+            <label for="password">Password</label>
 
-</form>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter password"
+                   required>
 
-        <p id="message"></p>
+            <button type="submit">Login</button>
+
+        </form>
+
+        <br>
+
+        <button onclick="window.location.href='/register'">
+            Register
+        </button>
 
     </div>
 

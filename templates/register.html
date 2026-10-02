@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaLearn Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-page">
+
+    <div class="login-box">
+
+        <h1>JavaLearn</h1>
+
+        <p class="subtitle">Create your account</p>
+
+        <form action="/register" method="POST">
+
+            <label>Username</label>
+
+            <input type="text"
+                   name="username"
+                   placeholder="Enter username"
+                   required>
+
+            <label>Password</label>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter password"
+                   required>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <p>
+            Already have an account?
+        </p>
+
+        <button onclick="window.location.href='/'">
+            Back to Login
+        </button>
+
+    </div>
+
+</body>
+
+</html>

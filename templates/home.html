@@ -3,23 +3,103 @@
 
 <head>
     <title>JavaLearn Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="dashboard-page">
 
-    <h1>JavaLearn</h1>
+    <header class="header">
 
-    <h2>Java for TY BSc CS</h2>
+        <h1>JavaLearn</h1>
 
-    <button onclick="window.location.href='/sem1'">
-    SEM 1
-</button>
+        <button class="logout-button"
+                onclick="window.location.href='/'">
+            Logout
+        </button>
 
-<button onclick="window.location.href='/sem2'">
-    SEM 2
-</button>
+    </header>
 
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <h2>Welcome to Learn Java</h2>
+
+            <p>
+                Learn Java concepts easily with notes,
+                examples and videos.
+            </p>
+
+        </section>
+
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <input type="text"
+                   id="searchBox"
+                   placeholder="Search Java topics...">
+
+        </section>
+
+
+        <!-- Semesters -->
+
+        <div class="semester-container">
+
+            <div class="semester-card">
+
+                <h2>Semester 1</h2>
+
+                <button onclick="window.location.href='/sem1'">
+                    Open Semester 1
+                </button>
+
+            </div>
+
+
+            <div class="semester-card">
+
+                <h2>Semester 2</h2>
+
+                <button onclick="window.location.href='/sem2'">
+                    Open Semester 2
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+<script>
+
+    const searchBox = document.getElementById("searchBox");
+
+    searchBox.addEventListener("keyup", function() {
+
+        let searchText = searchBox.value.toLowerCase();
+
+        let semesters = document.querySelectorAll(".semester-card");
+
+        semesters.forEach(function(semester) {
+
+            let text = semester.innerText.toLowerCase();
+
+            if (text.includes(searchText)) {
+                semester.style.display = "block";
+            } else {
+                semester.style.display = "none";
+            }
+
+        });
+
+    });
+
+</script>
 </body>
 
 </html>

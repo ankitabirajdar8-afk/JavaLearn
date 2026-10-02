@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Semester 2</title>
+
+    <title>JavaLearn - Semester 2</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
 </head>
-<body>
 
-    <h1>JavaLearn</h1>
+<body class="dashboard-page">
 
-    <h2>Semester 2</h2>
+    <header class="header">
 
-    <p>Advanced Java</p>
-    <p>Exception Handling</p>
-    <p>File Handling</p>
-    <p>Multithreading</p>
-    <p>Database Connectivity</p>
+        <h1>JavaLearn</h1>
+
+        <button class="logout-button"
+                onclick="window.location.href='/home'">
+            Home
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <h2>Semester 2</h2>
+
+            <p>Learn advanced Java concepts.</p>
+
+        </section>
+
+
+        <div class="semester-card">
+
+            <h2>Java Topics</h2>
+
+
+            <div class="topic-list">
+
+                <a href="https://www.youtube.com/watch?v=8cm1x4bC610"
+                   target="_blank">
+                    Exception Handling
+                </a>
+
+
+                <a href="https://www.youtube.com/watch?v=8cm1x4bC610"
+                   target="_blank">
+                    File Handling
+                </a>
+
+
+                <a href="https://www.youtube.com/watch?v=8cm1x4bC610"
+                   target="_blank">
+                    Multithreading
+                </a>
+
+
+                <a href="https://www.youtube.com/playlist?list=PLsyeobzWxl7oZJ5mRN4GvSNLnQ0LnT3ZP"
+                   target="_blank">
+                    JDBC and Database Connectivity
+                </a>
+
+
+                <a href="https://www.youtube.com/watch?v=8cm1x4bC610"
+                   target="_blank">
+                    Collections in Java
+                </a>
+
+
+                <a href="https://www.youtube.com/watch?v=8cm1x4bC610"
+                   target="_blank">
+                    Interfaces
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
+
 </html>

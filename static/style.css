@@ -1,45 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: palevioletred;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background: #F1F5EC;
+}
+
+
+/* Login Page */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F1F5EC;
+}
+
+.login-box {
+    width: 360px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
     text-align: center;
-    font-family: Arial;
+    border-top: 6px solid #53643A;
 }
 
-h1 {
-    color: yellowgreen;
-    margin-top: 100px;
+.login-box h1 {
+    color: #53643A;
+    margin-bottom: 5px;
 }
 
-.login {
-    margin-top: 100px;
+.subtitle {
+    margin-bottom: 25px;
+    color: #555555;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
 
 input {
+    width: 100%;
     padding: 10px;
+    border: 1px solid #AAB59A;
+    border-radius: 5px;
 }
 
 button {
-    background-color: yellow;
-    color: white;
+    width: 100%;
     padding: 10px;
-}
-body {
-    background-color: white;
-    text-align: center;
-    font-family: Arial;
-}
-
-h1 {
-    color: blue;
-    margin-top: 50px;
-}
-
-h2 {
-    margin-top: 50px;
-}
-
-button {
-    background-color: blue;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #53643A;
     color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3F4D2B;
+}
+
+
+/* Dashboard */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #F1F5EC;
+}
+
+.header {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #53643A;
+}
+
+.header h1 {
+    color: #53643A;
+    margin: 0;
+}
+
+.logout-button {
+    width: auto;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+
+/* Welcome */
+
+.welcome {
+    background: #53643A;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    margin: 0;
+}
+
+
+/* Semester Cards */
+
+.semester-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.semester-card {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    border: 2px solid #AAB59A;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.topic-list {
+    list-style: none;
+    padding: 0;
+}
+
+.topic-list li {
+    margin: 10px 0;
+}
+
+.topic-list a {
+    display: block;
     padding: 10px;
-    margin: 10px;
+    background: #F1F5EC;
+    color: #222222;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.topic-list a:hover {
+    background: #53643A;
+    color: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .login-box {
+        width: 90%;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+}
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E8C5CC;
+    border-radius: 8px;
+    font-size: 16px;
 }
