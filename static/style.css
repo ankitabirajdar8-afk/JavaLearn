@@ -256,3 +256,47 @@ button:hover {
     margin-top: 10px;
     color: #555555;
 }
+/* Reference Books */
+
+.books-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    width: 100%;
+    background: white;
+
+    border: 1px solid #AAB59A;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+.book-card h2 {
+    color: #53643A;
+    margin-top: 0;
+}
+
+.book-button {
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    background: #53643A;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+.book-button:hover {
+    background: #3F4D2B;
+}
+
+.books-link {
+    margin-top: 20px;
+}

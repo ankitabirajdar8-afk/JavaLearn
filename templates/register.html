@@ -38,13 +38,27 @@
 
         </form>
 
-        <p>
+                <p>
             Already have an account?
         </p>
 
         <button onclick="window.location.href='/'">
             Back to Login
         </button>
+
+
+        {% if error %}
+        <script>
+            alert("{{ error }}");
+        </script>
+        {% endif %}
+
+
+        {% if success %}
+        <script>
+            alert("{{ success }}");
+        </script>
+        {% endif %}
 
     </div>
 
